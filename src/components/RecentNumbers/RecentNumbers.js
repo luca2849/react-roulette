@@ -6,6 +6,7 @@ import RecentNumber from './RecentNumber/RecentNumber'
  * Functional compoenent for the group of recent spins
  * 
  * @param {object} props - Props passed to the component 
+ * @return {JSX} - Returned JSX for display
  */
 const RecentNumbers = (props) => {
     const black_numbers = props.black_numbers.map(String)

@@ -5,6 +5,7 @@ import classes from './RecentNumber.module.css';
  * Functional component for a singular recent number in the group
  * 
  * @param {object} props - Props passed to the component 
+ * @return {JSX} - Returned JSX for display
  */
 const RecentNumber = (props) => {
     let assignedClasses = [classes.number];
