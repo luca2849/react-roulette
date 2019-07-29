@@ -19,6 +19,18 @@ class Roulette extends Component {
     //      // DIFF BETWEEN ARRAY INDEXES - 54
     //     1: [6039.34, 6093.34]
     // }
+    create_obj = () => {
+        let obj = {}
+        for (let i = 0; i < 15; i++) {
+            if (i === 0) {
+                obj[i] = [5983, 6037];
+            } else {
+                let last = obj[i - 1][1];
+                obj[i] = [Math.round((last + 2.34) * 100) / 100, Math.round((last + 2.34 + 54) * 100) / 100];
+            }
+        }
+        return obj
+    }
     create_number_obj = () => {
         let obj = {};
         for (let i = 0; i < 15; i++) {
@@ -33,7 +45,11 @@ class Roulette extends Component {
 
     pick_random_number = (obj) => {
         let keys = Object.keys(obj)
-        return obj[keys[keys.length * Math.random() << 0]];
+        let random_key = keys[keys.length * Math.random() << 0];
+        let range_arr = obj[random_key]
+        let random_offset = Math.random() * (range_arr[1] - range_arr[0]) + range_arr[0];
+        console.log(random_offset)
+        return random_offset;
     }
     reset = () => {
         this.setState({ spin: false, spin_complete: false, btn_disable: false })
@@ -44,10 +60,17 @@ class Roulette extends Component {
         copy.unshift(number);
         this.setState({ lastFive: copy })
     }
+    getResult = (chosen, obj) => {
+        for(var key in obj){
+            if(obj[key][0] <= chosen && obj[key][1] >= chosen){
+                return key
+            }
+        }
+    }
     spin = () => {
-        const number_obj = this.create_number_obj()
+        const number_obj = this.create_obj()
         const chosen_number = this.pick_random_number(number_obj)
-        const result = Object.keys(number_obj).find(key => number_obj[key] === chosen_number)
+        const result = this.getResult(chosen_number, number_obj)
         let current_spinNum = this.state.spinNum
         this.setState({ spin: true, spinNum: current_spinNum += 1, chosen: chosen_number, chosen_num: parseInt(result) })
         this.setState({ btn_disable: true })
@@ -72,6 +95,7 @@ class Roulette extends Component {
             }
         }
         let disabledBool = (this.state.btn_disable) ? "disabled" : "";
+        const object = this.create_obj();
         const number_obj = this.create_number_obj();
         const black_numbers = [1, 3, 5, 7, 9, 11, 13]
 
@@ -81,7 +105,8 @@ class Roulette extends Component {
                 <Board 
                     spin={this.state.spin} 
                     complete={this.state.spin_complete} 
-                    number_obj={number_obj} 
+                    number_obj={number_obj}
+                    object={object}
                     chosen_number={this.state.chosen} 
                     black_numbers={black_numbers} 
                 />
