@@ -1,0 +1,19 @@
+.number{
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid white;
+    width: 75px;
+    height: 75px;
+    line-height: 55px;
+    font-size: 30px;
+    color: white;
+}
+.red{
+    background: red;
+}
+.black{
+    background: black;
+}
+.green{
+    background: green;
+}

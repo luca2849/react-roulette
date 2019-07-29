@@ -1,0 +1,70 @@
+.board{
+    transition: transform 7999ms cubic-bezier(0, 0, 0.28, 1) 0s;
+    transform: matrix(1, 0, 0, 1, -5856.25, 0);
+    -webkit-transition: transform 7999ms cubic-bezier(0, 0, 0.28, 1) 0s;
+    -moz-transition: transform 7999ms cubic-bezier(0, 0, 0.28, 1) 0s;
+    -ms-transition: transform 7999ms cubic-bezier(0, 0, 0.28, 1) 0s;
+    -o-transition: transform 7999ms cubic-bezier(0, 0, 0.28, 1) 0s;
+    /* max-height: 78px;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 500px;
+    margin: 0 auto; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: relative;
+    text-align: center;
+    width: 8450px;
+        backface-visibility: hidden;
+}
+.outer{
+    width: 100%;
+    position: relative;
+    padding: 5px 0;
+    margin: 5px 0;
+    background-color: #04001c;
+    border: 3px solid #04001c;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.spinContainer{
+    z-index: 1;
+    width: 1560px;
+    min-width: 1560px;
+    max-width: 1560px;
+    overflow: hidden;
+    position: relative;
+}
+.spinItemsContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: relative;
+    text-align: center;
+    width: 8450px;
+    transform: matrix(1,0,0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: matrix(1,0,0,0,0);
+    -moz-transform: matrix(1,0,0,0,0);
+    -ms-transform: matrix(1,0,0,0,0);
+    -o-transform: matrix(1,0,0,0,0);
+}

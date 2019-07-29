@@ -1,0 +1,60 @@
+.bettingPanel{
+    width: calc(50% - 20px);
+    font-size: 25px;
+    padding: 20px;
+    margin: 10px;
+    height: 100%;
+    float: right;
+    background-color: #001842;
+    color: white;
+}
+.betInput{
+    padding: 10px;
+}
+.betButtons{
+    display: block;
+    padding: 20px;
+}
+.betButtons button{
+    margin: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background: rgba(255, 0, 0, 0);
+}
+.error{
+    color: red;
+    margin: 5px;
+
+}
+.red{
+    border: 5px solid red;
+}
+.red:hover{
+    background: rgba(255, 74, 61, 1);
+    border: 5px solid rgba(255, 74, 61, 1);
+}
+.green{
+    border: 5px solid green;
+}
+.green:hover{
+    background: rgba(35, 148, 69, 1);
+    border: 5px solid rgba(35, 148, 69, 1);
+}
+.black{
+    border: 5px solid black;
+}
+.black:hover{
+    background: rgba(0, 0, 0, 1);
+    border: 5px solid black;
+}

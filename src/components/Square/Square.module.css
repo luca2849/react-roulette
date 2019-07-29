@@ -1,0 +1,42 @@
+.red{
+    background: red;
+}
+.black{
+    background: black;
+}
+.green{
+    background: green;
+}
+.square{
+    height: 150px;
+    width: 75px;
+    line-height: 150px;
+    font-size: 25px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    border: 1px solid white;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+.default_hidden{
+    visibility: hidden;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 5px solid white;
+    border-radius: 50%;
+    z-index: 2;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.show_selected{
+    visibility: visible;
+}
