@@ -12,13 +12,6 @@ class Roulette extends Component {
         lastFive: [0, 0, 0, 0, 0],
         btn_disable: false
     }
-    number_obj = {}
-    // aim_for_obj = {
-    //     0: [5983, 6037],
-    //      // DIFF BETWEEN RECORDS - 6039.34 - 6037 - 2.34
-    //      // DIFF BETWEEN ARRAY INDEXES - 54
-    //     1: [6039.34, 6093.34]
-    // }
     create_obj = () => {
         let obj = {}
         for (let i = 0; i < 15; i++) {
@@ -31,18 +24,6 @@ class Roulette extends Component {
         }
         return obj
     }
-    create_number_obj = () => {
-        let obj = {};
-        for (let i = 0; i < 15; i++) {
-            if (i === 0) {
-                obj[i] = 5167;
-            } else {
-                obj[i] = 5167 + (i * 56.34)
-            }
-        }
-        return obj
-    }
-
     pick_random_number = (obj) => {
         let keys = Object.keys(obj)
         let random_key = keys[keys.length * Math.random() << 0];
@@ -96,7 +77,6 @@ class Roulette extends Component {
         }
         let disabledBool = (this.state.btn_disable) ? "disabled" : "";
         const object = this.create_obj();
-        const number_obj = this.create_number_obj();
         const black_numbers = [1, 3, 5, 7, 9, 11, 13]
 
         return (
@@ -105,12 +85,10 @@ class Roulette extends Component {
                 <Board 
                     spin={this.state.spin} 
                     complete={this.state.spin_complete} 
-                    number_obj={number_obj}
                     object={object}
                     chosen_number={this.state.chosen} 
                     black_numbers={black_numbers} 
                 />
-                {/* <button style={btn_dis_style} className={classes.spinButton} onClick={this.spin} disabled={disabledBool}>Spin</button> */}
                 <div className={classes.mid_container}>
                     <RecentNumbers
                         title="Last 5 Spins"
@@ -121,7 +99,6 @@ class Roulette extends Component {
                         spin={this.spin}
                         complete={this.state.spin_complete}
                         chosen_number={this.state.chosen_num}
-                        number_obj={number_obj}
                         disabledBool={disabledBool}
                         btn_dis_style={btn_dis_style}
                         title="Betting Panel"
