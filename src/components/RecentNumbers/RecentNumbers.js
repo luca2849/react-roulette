@@ -2,6 +2,11 @@ import React from 'react';
 import classes from './RecentNumbers.module.css';
 import RecentNumber from './RecentNumber/RecentNumber'
 
+/**
+ * Functional compoenent for the group of recent spins
+ * 
+ * @param {object} props - Props passed to the component 
+ */
 const RecentNumbers = (props) => {
     const black_numbers = props.black_numbers.map(String)
     const most_recent_value = props.lastFive[0]

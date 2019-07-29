@@ -34,10 +34,10 @@ class Board extends Component {
         let style = {
             transition: "all 7999ms cubic-bezier(0, 0, 0.28, 1) 0s",
             transform: "matrix(1, 0, 0, 1, " + this.props.chosen_number * -1 + ", 0)"
-            // transform: "matrix(1, 0, 0, 1, " + (6038 * -1) + ", 0)"
         }
         let containerClasses = [classes.spinItemsContainer];
         let spinner = null;
+        // Spin logic, checks if the spin bool is set to true and if so, the animation is added
         if(this.props.spin === true){
             spinner = (
                 <div style={style} className={containerClasses.join(" ")}>

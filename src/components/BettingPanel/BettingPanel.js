@@ -8,7 +8,13 @@ class BettingPanel extends Component {
         balance: 10000,
         error: ""
     }
+    /**
+     * Used to handle the click event for betting buttons
+     * 
+     * @param {eventObject} event - Click event object
+     */
     handleChange = (event) => {
+        console.log(event)
         if(event.target.value > this.state.balance){
             this.setState({error: "You cannot bet more than your balance."})
         } else if(event.target.value <= 0){
@@ -17,6 +23,12 @@ class BettingPanel extends Component {
             this.setState({ bet: event.target.value, error: "" })
         }
     }
+    /**
+     * Object used to get the winning colour from a number
+     * 
+     * @param {integer} win - The winning number of the spin
+     * @return {string} - The string of the winning colour ('red', 'green' or 'black')
+     */
     getWinningColour = (win) => {
         let out;
         if(win % 2 === 0 && win !== 0){
@@ -28,6 +40,12 @@ class BettingPanel extends Component {
         }
         return out
     }
+    /**
+     * Used to handle a bet
+     * 
+     * @param {string} colour - The winning colour usually from getWinningColour()
+     * @param {integer} result - The integer result of the spin
+     */
     betHandler = (colour, result) => {
         let mult = null;
         let old_balance = this.state.balance;
@@ -48,7 +66,11 @@ class BettingPanel extends Component {
         }, 8500)
 
     }
-
+    /**
+     * Function used to combine the betHandler and the spin functions on a click of the betting buttons
+     * 
+     * @param {string} colour - Colour chosen by the user
+     */
     clickHandle = (colour) => {
         if (this.state.error === "") {
             let result = this.props.spin();
