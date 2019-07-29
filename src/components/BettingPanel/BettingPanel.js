@@ -14,7 +14,6 @@ class BettingPanel extends Component {
      * @param {eventObject} event - Click event object
      */
     handleChange = (event) => {
-        console.log(event)
         if(event.target.value > this.state.balance){
             this.setState({error: "You cannot bet more than your balance."})
         } else if(event.target.value <= 0){
