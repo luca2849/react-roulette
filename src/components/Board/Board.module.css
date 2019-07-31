@@ -60,11 +60,12 @@
     position: relative;
     text-align: center;
     width: 8450px;
-    transform: matrix(1,0,0,1,-93,0);
+    margin-right: 100px;
+    transform: matrix(1, 0, 0, 1, -93, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transform: matrix(1,0,0,1,-93,0);
-    -moz-transform: matrix(1,0,0,1,-93,0);
-    -ms-transform: matrix(1,0,0,1,-93,0);
-    -o-transform: matrix(1,0,0,1,-93,0);
+    -webkit-transform: matrix(1, 0, 0, 1, -93, 0);
+    -moz-transform: matrix(1, 0, 0, 1, -93, 0);
+    -ms-transform: matrix(1, 0, 0, 1, -93, 0);
+    -o-transform: matrix(1, 0, 0, 1, -93, 0);
 }
