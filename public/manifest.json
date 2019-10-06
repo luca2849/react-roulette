@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Roulette",
+  "name": "React Roulette In-Browser Game",
   "icons": [
     {
       "src": "favicon.ico",
