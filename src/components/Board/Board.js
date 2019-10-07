@@ -8,8 +8,9 @@ class Board extends Component {
         let numbers = [...Array(15).keys()]
         // numbers.splice(8, 0, "00")
         let output = []
-        // output = [...numbers, ...numbers]
-        output = [...numbers, ...numbers, ...numbers, ...numbers, ...numbers, ...numbers, ...numbers, ...numbers, ...numbers, ...numbers]
+        for(var i = 0; i < 10; i++){
+            output.push(...numbers);
+        }
         const black_numbers = this.props.black_numbers;
         const squares = (
             <Auxillary>
